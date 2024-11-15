@@ -20,5 +20,31 @@ namespace Labo_9___MenuSliderBrushes
         {
             InitializeComponent();
         }
+        private void CloseApp(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Bent u zeker dat u de applicatie wenst af te sluiten?", "afsluiten", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+        }
+        private void MnuNumberOneClick(object sender, RoutedEventArgs e)
+        {
+            numberOneTextBox.Text = "2";
+        }
+        private void MnuNumberTwoClick(object sender, RoutedEventArgs e)
+        {
+            numberTwoTextBox.Text = "2";
+        }
+
+        private void NumberOneSliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            numberOneTextBox.Text = numberOneSlider.Value.ToString();
+        }
+
+        private void NumberTwoSliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            numberTwoTextBox.Text = numberTwoSlider.Value.ToString();
+        }
     }
 }

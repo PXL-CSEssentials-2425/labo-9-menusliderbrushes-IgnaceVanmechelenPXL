@@ -9,15 +9,28 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" Content="Eerste getal:"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Name="numberOneTextBox" HorizontalAlignment="Left" Width="100"/>
-        <Label Grid.Column="0" Grid.Row="1" Content="Tweede getal:"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Name="numberTwoTextBox" HorizontalAlignment="Left" Width="100"/>
+        <Menu Name="Hoofdmenu" Grid.ColumnSpan="3">
+            <MenuItem Name="mnuFile" Header="Bestand">
+                <MenuItem Name="mnuClose" Header="Afsluiten" Click="CloseApp"/>
+            </MenuItem>
+            <MenuItem Name="mnuNumbers" Header="Getallen">
+                <MenuItem Name="mnuNumberOne" Header="Getal 1" Click="MnuNumberOneClick"/>
+                <MenuItem Name="mnuNumberTwo" Header="Getal 2" Click="MnuNumberTwoClick"/>
+            </MenuItem>
+        </Menu>
+        <Label Grid.Column="0" Grid.Row="1" Content="Eerste getal:"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="numberOneTextBox" HorizontalAlignment="Left" Width="100"/>
+        <Slider Grid.Column="2" Grid.Row="1" ValueChanged="NumberOneSliderValueChanged" Minimum="1" Maximum="5" Name="numberOneSlider" HorizontalAlignment="Left" Width="100" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Tweede getal:"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="numberTwoTextBox" HorizontalAlignment="Left" Width="100"/>
+        <Slider Grid.Column="2" Grid.Row="2" ValueChanged="NumberTwoSliderValueChanged" Minimum="1" Maximum="5" Name="numberTwoSlider" HorizontalAlignment="Left" Width="100" VerticalAlignment="Center" Margin="20,0,0,0"/>
     </Grid>
 </Window>
